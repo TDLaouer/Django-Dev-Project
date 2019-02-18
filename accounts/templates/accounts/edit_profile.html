@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+<title>Edit Profile</title>
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Edit Profile</h1>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <fieldset class="form-group">
+    {% if aform.errors or uform.errors %}
+    {% for field in uform %}
+      {% for error in field.errors %}
+        <div class="alert alert-danger">
+          {{error|escape}}
+        </div>
+      {% endfor %}
+    {% endfor %}
+    {% for field in aform %}
+      {% for error in field.errors %}
+        <div class="alert alert-danger">
+          {{error|escape}}
+        </div>
+      {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {{ uform|crispy }}
+    {{ aform|crispy }}
+  </fieldset>
+  <div class="form-group">
+      <button type="submit" class="btn btn-outline-dark">Apply Changes</button>
+  </div>
+</form>
+<br>
+<a href="{% url 'change_password' %}" class="btn btn-primary" role="button" aria-pressed="true">Change Password</a>
+
+
+
+
+{% endblock %}

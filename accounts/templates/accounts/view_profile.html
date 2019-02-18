@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<title>Your Profile</title>
+
+{% endblock %}
+
+{% block body %}
+
+<h1>User Profile</h1>
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success">
+  {{message}}
+</div>
+{% endfor %}
+{% endif %}
+<div class="content-section">
+  <div class="media">
+    <img src="{{ user.avatar.url }}" class="rounded-circle account-img">
+    <div class="media-body">
+      <h2 class="account-heading">{{ user }}</h2>
+      <p class="text-secondary">{{ user.email }}</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="profile-work">
+      <p>INFO</p>
+      Gender : {{user.gender}}<br />
+      Date of Birth : {{user.date_of_birth}}<br />
+      City : {{user.city}}<br>
+      Country : {{user.country}}<br>
+      Profession : {{user.profession}}
+      <p>ABOUT</p>
+      {{user.description}}
+    </div>
+  </div>
+</div>
+<div class="col-md-2">
+  <a href="{% url 'edit_profile' %}" class="btn btn-primary" role="button" aria-pressed="true">Edit Profile</a>
+</div>
+
+{% endblock %}

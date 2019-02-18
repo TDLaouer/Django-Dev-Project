@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+<title>New Post</title>
+
+{% endblock %}
+
+{% block body %}
+
+<legend class="border-bottom mb-4">Write a new post</legend>
+
+{% if user.is_authenticated %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.errors }}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-outline-dark">Submit</button>
+  </form>
+{% else %}
+  <p>You Must be logged in to submit a post. <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">create an account</a></p>
+{% endif %}
+
+{% endblock %}

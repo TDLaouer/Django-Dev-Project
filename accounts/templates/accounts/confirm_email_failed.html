@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Reset Failed</title>
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Password Reset Failed</h1>
+<p>
+  There was a problem with your activation, please try again later or contact an administrator
+  <br>
+  <a href="{% url 'register' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register</a>
+</p>
+
+{% endblock %}

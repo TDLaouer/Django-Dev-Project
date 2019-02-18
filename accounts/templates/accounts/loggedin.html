@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+  <title>The Storm Eye</title>
+
+{% endblock %}
+
+{% block body %}
+
+  <h2>You are already Logged In, please go back to home directory.</h2>
+  <p>  <a href="{% url 'home' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home</a></p>
+
+{% endblock %}
