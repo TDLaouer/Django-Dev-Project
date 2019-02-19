@@ -8,8 +8,8 @@ DEBUG = False
 ALLOWED_HOSTS = [
 	'176.166.236.47',
 	'localhost',
-	'www.thestormeye.co',
-	'thestormeye.co'
+	'www.momolaouweb.fr',
+	'momolaouweb.fr'
 	]
 
 # Database
@@ -18,7 +18,7 @@ ALLOWED_HOSTS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tseproddb',
+        'NAME': 'djangodb',
         'USER': config['DB_USER'],
         'PASSWORD': config['DB_PASS'],
         'HOST': 'localhost',
@@ -33,7 +33,13 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config['EMAIL_USER']
 EMAIL_HOST_PASSWORD = config['EMAIL_PASS']
 
-
+"""
+SECURE_CONTENT_TYPE_NOSNIFF=True
+SECURE_BROWSER_XSS_FILTER=True
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
+X_FRAME_OPTIONS="DENY"
+"""
 
 try:
     from djangoproj.settings.local import *
