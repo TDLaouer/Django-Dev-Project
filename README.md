@@ -1,8 +1,8 @@
 # The MoMOLaOuWeb Website
 
-Web developpement for a shitty site by the django web framework
+Web developpement by the django web framework
 
-www.thestormeye.co
+https://momolaouweb.fr/
 
 ## Prerequisites
 
