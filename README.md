@@ -21,7 +21,7 @@ In the project you can find the core tools located in the djangoproj folder, and
 ### Current Features
 
 - Login
-- Register
+- Register (Temporarily disabled)
 - Email Verification
 - Reset Password
 - Edit Profile
