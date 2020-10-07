@@ -1,4 +1,4 @@
-# The MoMOLaOuWeb Website
+# A personal blog site
 
 Web developpement by the django web framework
 
