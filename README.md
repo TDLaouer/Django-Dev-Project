@@ -2,7 +2,6 @@
 
 Web developpement by the django web framework
 
-https://momolaouweb.fr/
 
 ## Prerequisites
 
